@@ -1,0 +1,113 @@
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+
+    // Title
+
+    .featured-products {
+        font-weight: @font-weight__semibold;
+        margin-bottom: 20px;
+    }
+
+    // slider-image
+
+    .slider-image-vertuo {
+        padding-top: 40px;
+        width: 80%;
+    }
+
+    .slider-image-gemini {
+        padding-top: 40px;
+    }
+
+    .slider-image-zenius {
+        padding-top: 20px;
+        width: 80%;
+    }
+
+    // slider-description
+
+    .slider-product-supplier {
+        color: @color-gray55;
+        font-size: @font-size__xs;
+        margin-bottom: -1px;
+    }
+
+    .slider-product-brand {
+        font-weight: @font-weight__semibold;
+    }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m){
+
+    // Title
+
+    .featured-products {
+        font-size: 25px;
+        padding: 10px 0 0 70px;
+    }
+
+    // slider-description
+
+    .slider-description-gemini {
+        padding-top: 35px;
+    }
+
+    .slider-description-vertuo {
+        padding-top: 85px;
+    }
+
+    .slider-description-zenius {
+        padding-top: 5px;
+    }
+
+    .slider-product-brand {
+        width: 80%;
+    }
+
+    .slider-product-price-gemini,
+    .slider-product-price-vertuo,
+    .slider-product-price-zenius {
+        padding-top: 20px;
+    }
+}
+
+//
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+
+    // Title
+
+    .featured-products {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    // slider-description
+
+    .slider-description-gemini {
+        padding-top: 10px;
+    }
+
+    .slider-description-vertuo {
+        padding-top: 70px;
+    }
+
+    .slider-description-zenius {
+        padding-top: 30px;
+    }
+
+    .slider-product-price-gemini,
+    .slider-product-price-vertuo,
+    .slider-product-price-zenius {
+        padding-top: 15px;
+    }
+}

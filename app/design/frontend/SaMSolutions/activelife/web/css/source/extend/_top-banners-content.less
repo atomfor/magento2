@@ -1,0 +1,117 @@
+//
+//  Common
+//  _____________________________________________
+
+
+& when (@media-common = true) {
+
+    .top-banner-left {
+        background-color: #8888a6;
+    }
+
+    .top-banner-right {
+        background-color: #55a1d3;
+    }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m){
+
+    .top-banners {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .top-banner-left {
+        width: 50%;
+    }
+
+    .top-banner-right {
+        width: 50%;
+    }
+
+    .top-banner-left-content {
+        .top-banners-content-text();
+        font-size: @font-size__s;
+        padding-left: 220px;
+    }
+
+    .top-banner-right-content {
+        .top-banners-content-text();
+        font-size: @font-size__s;
+        padding-left: 140px;
+    }
+}
+
+//
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+
+    .top-banners {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .top-banner-left {
+        text-align: center;
+        height: 40px;
+        margin-bottom: -40px;
+        position: relative;
+        z-index: 2;
+        animation: 10s infinite reverse fade;
+    }
+
+    @keyframes fade {
+
+        0% {
+            opacity: 0;
+        }
+        11.11% {
+            opacity: 0;
+        }
+        33.33% {
+            opacity: 1;
+        }
+        44.44% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+        44.44% {
+            opacity: 0;
+        }
+        33.33% {
+            opacity: 0;
+        }
+        11.11% {
+            opacity: 1;
+        }
+        0% {
+            opacity: 1;
+        }
+    }
+
+    .top-banner-right {
+        text-align: center;
+        height: 40px;
+        position: relative;
+        z-index: 1;
+
+    }
+
+
+    .top-banner-left-content,
+    .top-banner-right-content {
+        .top-banners-content-text();
+        font-size: @font-size__xs
+    }
+}

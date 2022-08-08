@@ -1,0 +1,86 @@
+//
+//  Default Variables
+//
+
+@slick-font-path: "app/design/frontend/SaMSolutions/activelife/Magento_Theme/web/fonts/";
+@slick-font-family: "slick";
+@slick-arrow-color: #757575;
+@slick-opacity-default: 0;
+@slick-opacity-on-hover: 1;
+@slick-opacity-not-active: 1;
+@slick-image: "app/design/frontend/SaMSolutions/activelife/Magento_Theme/web/images/";
+
+/* Slider */
+.slick-loading .slick-list {
+    background: #fff url('@{slick-image}ajax-loader.gif') center center no-repeat;
+}
+
+/* Arrows */
+.slick-prev,
+.slick-next {
+    position: absolute;
+    display: block;
+    height: 30px;
+    width: 30px;
+    line-height: 0;
+    font-size: 0;
+    cursor: pointer;
+    color: transparent;
+    top: 50%;
+    -webkit-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    padding: 0;
+    border: none;
+    outline: none;
+
+    &:hover, &:focus {
+        outline: none;
+        color: transparent;
+
+        &:before {
+            opacity: @slick-opacity-on-hover;
+        }
+    }
+
+    &.slick-disabled:before {
+        opacity: @slick-opacity-not-active;
+    }
+}
+
+.slick-prev:before,
+.slick-next:before {
+    font-size: 30px;
+    line-height: 1;
+    color: @slick-arrow-color;
+
+    & when ( @slick-font-family = 'slick' ) {
+        /* Icons */
+        @font-face {
+            font-family: 'slick';
+            font-weight: normal;
+            font-style: normal;
+            src: url('@{slick-font-path}slick.eot');
+            src: url('@{slick-font-path}slick.eot?#iefix') format('embedded-opentype'), url('@{slick-font-path}slick.woff') format('woff'), url('@{slick-font-path}slick.ttf') format('truetype'), url('@{slick-font-path}slick.svg#slick') format('svg');
+        }
+    }
+}
+
+.slick-prev {
+    left: -25px;
+
+    [dir="rtl"] & {
+        left: auto;
+        right: -25px;
+    }
+}
+
+.slick-next {
+    right: -25px;
+
+    [dir="rtl"] & {
+        left: -25px;
+        right: auto;
+    }
+}
+

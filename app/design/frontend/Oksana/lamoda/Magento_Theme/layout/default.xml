@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+
+<page layout="3columns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="default_head_blocks"/>
+
+    <body>
+        <referenceContainer name="footer-container" remove="true"/>
+          <referenceBlock  name="absolute_footer" remove="true"/>
+
+            <container name="custom-footer" label="Custom Footer" htmlTag="div" htmlClass="custom_footer_content">
+                <container name="pre-footer" label="Pre Footer" htmlTag="div" htmlClass="pre-footer">
+                        <block class="Magento\Framework\View\Element\Template" name="pre_footer_info" template="Magento_Theme::html/pre_footer_info.phtml"/>
+                        <block class="Magento\Newsletter\Block\Subscribe" name="form_subscribe_custom" as="subscribe.custom"
+                               template="Magento_Newsletter::subscribe.phtml" ifconfig="newsletter/general/active"/>
+                </container>
+
+                <container name="column-footer" label="Column Footer" htmlTag="div" htmlClass="column-footer" after="pre-footer">
+                    <block class="Magento\Framework\View\Element\Template" name="footer_contact_info"
+                           template="Magento_Theme::html/footer_contact_info.phtml"/>
+                </container>
+
+                <container name="after-footer" label="After Footer" htmlTag="div" htmlClass="after-footer" after="column-footer">
+                    <block class="Magento\Theme\Block\Html\Footer" name="copyright" template="Magento_Theme::html/copyright.phtml"/>
+                    <block class="Magento\Framework\View\Element\Template" name="footer_icon"
+                           template="Magento_Theme::html/footer_icons.phtml"/>
+                </container>
+            </container>
+    </body>
+</page>
+

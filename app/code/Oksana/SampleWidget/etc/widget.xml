@@ -1,0 +1,15 @@
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
+    <widget class="Oksana\SampleWidget\Block\Widget\Title" id="oksana_sample_widget">
+        <label>My New Widget</label>
+        <description>This is a test widget!!!</description>
+        <parameters>
+            <parameter name="title" xsi:type="text" required="false" visible="true">
+                <label translate="true">Title</label>
+            </parameter>
+            <parameter name="content" xsi:type="text" required="false" visible="true">
+                <label translate="true">Content</label>
+            </parameter>
+        </parameters>
+    </widget>
+</widgets>

@@ -1,0 +1,160 @@
+//
+//  Common
+//  _____________________________________________
+
+
+& when (@media-common = true) {
+
+    .name-company {
+        color: @color-white;
+        font-family: @font-family__serif;
+        font-weight: @font-weight__bold;
+        text-align: center;
+    }
+
+    .tagline-company {
+        color: @color-white;
+        font-weight: @font-weight__bold;
+        text-align: center;
+    }
+
+    .guide-switch {
+        .lib-icon-font(@icon-arrow-up);
+        color: @color-white;
+        font-family: @font-family__serif;
+        font-weight: @font-weight__bold;
+
+        &:after {
+            .icon-arrow-up();
+        }
+    }
+
+}
+
+
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m){
+
+    .main-content {
+        background-image: url('https://cdn.fleetfeet.com/assets/2019_Holiday_Lifestyle-3574.jpg/dynamic:1-aspect:1.9639344262295-fit:cover-strategy:entropy/2019_Holiday_Lifestyle-3574--1440.jpg');
+        background-size: 100%;
+        margin-bottom: 20px;
+    }
+
+    //  main-content-title
+
+    .name-company {
+        font-size: 60px;
+        padding-top: 180px;
+    }
+
+    .main-content-title > hr {
+        width: 5%;
+    }
+
+    .tagline-company {
+        font-size: 25px;
+        padding: 10px;
+    }
+
+    //  main-content-text
+
+    .main-content-text {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin-top: 100px;
+    }
+
+    .main-content-text-left,
+    .main-content-text-right {
+        .main-content-text-guide();
+    }
+
+    .main-content-text-center {
+        .main-content-text-guide();
+        border: .1px solid #98a5b2;
+        border-bottom: none;
+        border-top: none;
+    }
+
+    .guide-title {
+        font-size: @font-size__xs;
+        color: #cb3b3b;
+    }
+
+}
+
+//
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+
+    .page-header {
+        border-bottom: none;
+        margin-bottom: 0;
+    }
+
+    .main-content {
+        margin-bottom: 20px;
+    }
+
+    //  main-content-title
+
+    .main-content-title {
+        background-image: url('https://cdn.24.co.za/files/Cms/General/d/2535/5f0c252da4df4f099ba6c3f3e3927a1e.jpg');
+        background-size: cover;
+    }
+
+    .name-company {
+        font-size: 40px;
+        padding-top: 70px;
+    }
+
+    .main-content-title > hr {
+        width: 10%;
+    }
+
+    .tagline-company {
+        font-size: 15px;
+        padding: 10px 0 150px 0;
+    }
+
+    //  main-content-text
+
+    .main-content-text {
+        align-items: center;
+        background-color: #8282b4;
+        display: flex;
+        flex-direction: column;
+        margin-top: -10px;
+        padding: 15px 0;
+    }
+
+    .main-content-text-center {
+        .main-content-text-guide-m();
+        border: .1px solid #adb4b7;
+        border-left: none;
+        border-right: none;
+        width: 55%;
+    }
+
+    .main-content-text-left {
+        .main-content-text-guide-m();
+        width: 50%;
+    }
+
+    .main-content-text-right {
+        .main-content-text-guide-m();
+        width: 45%;
+    }
+
+    .guide-title {
+        font-size: @font-size__xs;
+        color: #cb3b3b;
+    }
+}

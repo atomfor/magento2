@@ -1,0 +1,54 @@
+
+// _top-banners-content mixins
+
+.top-banners-content-text(
+    @color: @color-white,
+    @font-family: @font-family__sans-serif,
+    @font-weight: @font-weight__semibold,
+    @line-height: @line-height__l,
+    @margin-top: 15px
+){
+    color: @color;
+    font-family: @font-family;
+    font-weight:@font-weight;
+    line-height: @line-height;
+    margin-top: @margin-top;
+}
+
+//  _main-content mixins
+
+.main-content-text-guide(
+    @text-align: center,
+    @display: block,
+    @margin-bottom: 30px,
+    @padding: 0 20px 0 20px,
+    @width: 15%
+){
+    text-align: @text-align;
+    display: @display;
+    margin-bottom: @margin-bottom;
+    padding: @padding;
+    width: @width;
+}
+
+.main-content-text-guide-m(
+    @text-align: center,
+    @display: block,
+    @padding-top: 15px
+){
+    text-align: @text-align;
+    display: @display;
+    padding-top: @padding-top;
+
+}
+
+.icon-arrow-up(
+    @font-weight: lighter,
+    @transform: rotate(90deg)
+
+){
+    font-weight: @font-weight;
+    transform: @transform;
+}
+
+

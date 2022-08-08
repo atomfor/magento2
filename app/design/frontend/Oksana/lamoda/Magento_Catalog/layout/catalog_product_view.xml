@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+
+    <body>
+        <referenceContainer name="main.content">
+            <container name="product.more.info" htmlTag="div" htmlClass="product more info detailed" after="-">
+                <block class="Magento\Framework\View\Element\Template" name="product.more.info.small" template="Magento_Catalog::grup.phtml">
+                    <block class="Magento\Catalog\Block\Product\View\Gallery" name="product.info.media.image.more.info"
+                           template="Magento_Catalog::product/view/image.phtml">
+                        <arguments>
+                            <argument name="imageHelper" xsi:type="object">Magento\Catalog\Helper\Image</argument>
+                        </arguments>
+                    </block>
+                    <block class="Magento\Theme\Block\Html\Title" name="title" template="Magento_Catalog::html/name.phtml"
+                           after="product.info.media.image.more.info"/>
+                    <block class="Magento\Catalog\Pricing\Render" name="product.price.final.more.info" after="title">
+                        <arguments>
+                            <argument name="price_render" xsi:type="string">product.price.render.default</argument>
+                            <argument name="price_type_code" xsi:type="string">final_price</argument>
+                            <argument name="zone" xsi:type="string">item_view</argument>
+                        </arguments>
+                    </block>
+                    <block class="Magento\Catalog\Block\Product\View" name="addocart" after="product.price.final.more.info"
+                           template="Magento_Catalog::html/addocart.phtml"/>
+                </block>
+            </container>
+        </referenceContainer>
+    </body>
+</page>

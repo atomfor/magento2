@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+
+<page layout="1columns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="default_head_blocks"/>
+    <body>
+        <attribute name="id" value="html-body"/>
+        <referenceContainer name="header.panel.wrapper" display="false"/>
+        <referenceContainer name="header-wrapper" display="false"/>
+        <referenceContainer name="columns.top" display="false"/>
+        <referenceContainer name="page.top" display="false"/>
+        <referenceContainer name="main" display="false"/>
+        <referenceContainer name="footer-container" display="false"/>
+
+        <referenceContainer name="header.container">
+            <container name="top.banners" label="Top Banners" htmlTag="div" htmlClass="top_banners">
+                <block class="Magento\Framework\View\Element\Template" name="top_banners_content"
+                       template="Magento_Theme::html/top_banners_content.phtml"/>
+            </container>
+        </referenceContainer>
+        <referenceContainer name="page.wrapper">
+            <container name="main.content" label="Main Content" htmlTag="div" htmlClass="main_content">
+                <block class="Magento\Framework\View\Element\Template" name="main_content"
+                       template="Magento_Theme::html/main_content.phtml"/>
+            </container>
+        </referenceContainer>
+        <container name="slick.slider" label="Slick Slider" htmlTag="div" htmlClass="slick_slider" after="-">
+            <block class="Magento\Framework\View\Element\Template" name="slider"
+                   template="Magento_Theme::slider.phtml"/>
+        </container>
+    </body>
+</page>
+
